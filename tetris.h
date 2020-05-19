@@ -26,17 +26,21 @@ public:
 
     /*UI交互*/
     //游戏部分
-    //输入
     void move_left();//左移
     void move_right();//右移
     void move_rotate();//旋转
     void move_down();//下落
     void use_item();//使用道具
-    //输出
+    int get_item();//道具信息
     int* get_my_ui();//我方游戏界面
     int* get_opponent_ui();//对方游戏界面
-    int get_next_block();//下一个方块
-    int get_item();//道具信息
+    void CreateBlock();//创建当前方块
+    Block getNextBlock();           //获得下一个方块
+    Block getBlock();               //获得当前方块
+    int getScore();                 //获得分数
+    int getBox(int x, int y);       //获得相应坐标的状态
+
+
 
     //联机部分
     void input_user_name(QString name);//输入用户名
