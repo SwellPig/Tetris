@@ -2,6 +2,17 @@
 #ifndef TETRIS_H
 #define TETRIS_H
 
+#define MAXX 10     //显示窗口的横向格数
+#define MAXY 20     //显示窗口的竖向格数
+#define NEXTMAXX 6  //“下一个”显示窗口的横向格数
+#define NEXTMAXY 6  //“下一个”显示窗口的竖向格数
+#define WIDTH 30    //单格的宽度
+#define HEIGHT 30   //单格的高度
+#define INTERVAL 4  //单格之间的间隔
+#define COUNT 4     //每个方块的格数
+
+#include <cstdlib>
+#include <ctime>
 #include <QObject>
 #include "tcpclient.h"
 
@@ -50,7 +61,18 @@ private:
     int next_block_number;//下一个方块的编号
     int item[5];//道具信息
     QString opponent_game_matrix;//对方数据
+    int score;//分数
 
 };
+
+//方块的结构体
+struct Block
+{
+    int x[COUNT];   //方块单格的x坐标
+    int y[COUNT];   //方块单格的y坐标
+    int centerX;    //方块的中心x坐标
+    int centerY;    //方块的中心y坐标
+    int ID;         //方块的ID
+}
 
 #endif // TETRIS_H
